@@ -12,7 +12,7 @@ var App = (function(lng, undefined) {
                 'repos.html'
             ],
             templates: [
-                'activity.html',
+                'activity-item.html',
                 'profile.html',
                 'org-item.html',
                 'repo-item.html'

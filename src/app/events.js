@@ -3,7 +3,7 @@ App.Events = (function(lng, app, undefined) {
     $$('#activity').ready(function(e){
         lng.View.Template.List.create({
             el: '#activity',
-            template: 'activity-tpl',
+            template: 'activity-item-tpl',
             data: app.Mockups.github.activity
         });
     });
