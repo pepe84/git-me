@@ -24,32 +24,16 @@
 
 <body class="app">
     
-    <section id="hello_world">
+    <section id="dashboard">
 
-        <header data-title="Git me!">
-            <a href="#aside-example" data-target="aside" data-icon="files" class="button onleft">Aside</a>
-            <a href="#copyright" data-target="section" data-icon="files" class="button onright">Copyright</a>
+        <header data-title="Dashboard">
+            <a href="#refresh" data-icon="refresh" class="button onright"></a>
         </header>
-
-        <footer class="toolbar with-labels">
-            <nav>
-                <a href="#article-1" class="current" data-target="article" data-icon="user" data-label="User"></a>
-                <a href="#article-2" data-target="article" data-icon="group" data-label="Group"></a>
-                <a href="#article-3" data-target="article" data-icon="folder" data-label="Folder"></a>
-            </nav>
-        </footer>
-
-        <article id="article-1">article 1</article>
-        <article id="article-2">article 2</article>
-        <article id="article-3">article 3</article>
+        
+        <article id="activity" class="list scrollable"></article>
+        
     </section>
     
-    <aside id="aside-example">
-        
-    </aside>
-
-
-
     <!-- LungoJS (Production mode) -->
     <script src="lungo.js/lungo-1.2.js"></script>
     
