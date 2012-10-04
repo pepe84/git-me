@@ -1,15 +1,22 @@
 var App = (function(lng, undefined) {
 
     //Define your LungoJS Application Instance
-    /*
+    
     lng.App.init({
-        name: 'Select a name for your app',
-        version: '1.1'
+        name: 'git me!',
+        version: '0.1',
+        resources: {
+            sections: [
+                'copyright.html'
+            ],
+            templates: [
+                
+            ]
+        }
     });
-    */
-
+    
     return {
-
-    };
+        
+    }
 
 })(LUNGO);
