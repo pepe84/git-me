@@ -2,6 +2,13 @@ App.Services = (function(lng, app, undefined) {
 
     var mockup = true;
     
+    $$.ajaxSettings.error = function(xhr, type) { 
+        app.Log.err(xhr);
+    };
+    
+    /**
+     * @see http://developer.github.com/v3
+     */
     var github = (function(){
         // API
         var basePath = 'https://api.github.com';
@@ -13,7 +20,8 @@ App.Services = (function(lng, app, undefined) {
                         cb(App.Mockups.github.user);
                         return;
                     }
-                    // TODO fix Access-Control-Allow-Origin issue using JSONP
+                    // JSONP
+                    $$.ajaxSettings.success = cb;
                     $$.get(basePath + '/users/' + username, {'callback': '?'} , cb);
                 }
             },
@@ -23,7 +31,8 @@ App.Services = (function(lng, app, undefined) {
                         cb(App.Mockups.github.orgs);
                         return;
                     }
-                    // TODO fix Access-Control-Allow-Origin issue using JSONP
+                    // JSONP
+                    $$.ajaxSettings.success = cb;
                     $$.get(basePath + '/users/' + username + '/orgs', {'callback': '?'} , cb);
                 },
                 getOrg: function(name, cb) {
@@ -31,7 +40,8 @@ App.Services = (function(lng, app, undefined) {
                         cb(App.Mockups.github.org);
                         return;
                     }
-                    // TODO fix Access-Control-Allow-Origin issue using JSONP
+                    // JSONP
+                    $$.ajaxSettings.success = cb;
                     $$.get(basePath + '/orgs/' + name, {'callback': '?'} , cb);
                 }
             },
@@ -41,23 +51,52 @@ App.Services = (function(lng, app, undefined) {
                         cb(App.Mockups.github.repos);
                         return;
                     }
-                    // TODO fix Access-Control-Allow-Origin issue using JSONP
-                    $$.get(basePath + '/users/' + username + '/repos', {'callback': '?'} , cb);
+                    // JSONP
+                    $$.ajaxSettings.success = cb;
+                    $$.get(basePath + '/users/' + username + '/repos', {'callback': '?'});
                 },
                 getRepo: function(name, owner, cb) {
                     if (mockup) {
                         cb(App.Mockups.github.repo);
                         return;
                     }
-                    // TODO fix Access-Control-Allow-Origin issue using JSONP
-                    $$.get(basePath + '/repos/' + owner + '/' + name, {'callback': '?'} , cb);                    
+                    // JSONP
+                    $$.ajaxSettings.success = cb;
+                    $$.get(basePath + '/repos/' + owner + '/' + name, {'callback': '?'});                    
                 }
             }
         }
     })();
     
+    /**
+     * @see https://github.com/juandebravo/mobilehackaton
+     */
+    var gamification = (function(){
+        // API
+        var basePath = 'https://juandebravo:hackaton@juandebravo.cloudant.com/hackaton';
+        // Public
+        return {
+            getOrganizations: function(cb) {
+                // JSONP
+                $$.ajaxSettings.success = cb;
+                $$.get(basePath + '/organizations', {'callback': '?'});
+            },
+            getOrganizationData: function(name, cb) {
+                // JSONP
+                $$.ajaxSettings.success = cb;
+                $$.get(basePath + '/organizations_' + name, {'callback': '?'});
+            },
+            getUserData: function(name, username, cb) {
+                // JSONP
+                $$.ajaxSettings.success = cb;
+                $$.get(basePath + '/organizations_' + name + '_users_' + username, {'callback': '?'});
+            }
+        }
+    })();
+    
     return {
-        github: github
+        github: github,
+        gamification: gamification
     }
 
 })(LUNGO, App);

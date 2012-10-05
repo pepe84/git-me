@@ -14,6 +14,26 @@ App.Events = (function(lng, app, undefined) {
         });
     });
     
+    // TODO Dynamic org param
+    $$('#goto-ranking').tap(function(e){
+        app.Services.gamification.getOrganizations(function(resp){
+            for (var index in resp.organizations) {
+                var name = resp.organizations[index];
+                app.Services.gamification.getOrganizationData(name, function(resp){
+                    lng.View.Template.List.create({
+                        el: '#ranking-list',
+                        template: 'org-ranking-tpl',
+                        data: resp.users,
+                        order: {
+                            field: 'rank',
+                            type: 'asc'
+                        }
+                    });
+                });
+            }
+        });
+    });
+    
     // TODO Dynamic user param
     $$('#goto-orgs').tap(function(e){
         app.Services.github.Orgs.getOrgsByUser(this.innerHTML, function(resp){

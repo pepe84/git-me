@@ -11,7 +11,8 @@ var App = (function(lng, undefined) {
                 'orgs.html',
                 'org.html',
                 'repos.html',
-                'repo.html'
+                'repo.html',
+                'ranking.html'
             ],
             templates: [
                 'activity-item.html',
@@ -19,7 +20,8 @@ var App = (function(lng, undefined) {
                 'org-item.html',
                 'repo-item.html',
                 'organization.html',
-                'repository.html'
+                'repository.html',
+                'org-ranking.html'
             ]
         }
     });
