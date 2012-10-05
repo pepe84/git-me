@@ -25,6 +25,14 @@ App.Services = (function(lng, app, undefined) {
                     }
                     // TODO fix Access-Control-Allow-Origin issue using JSONP
                     $$.get(basePath + '/users/' + username + '/orgs', {'callback': '?'} , cb);
+                },
+                getOrg: function(name, cb) {
+                    if (mockup) {
+                        cb(App.Mockups.github.org);
+                        return;
+                    }
+                    // TODO fix Access-Control-Allow-Origin issue using JSONP
+                    $$.get(basePath + '/orgs/' + name, {'callback': '?'} , cb);
                 }
             },
             Repos: {
@@ -35,6 +43,14 @@ App.Services = (function(lng, app, undefined) {
                     }
                     // TODO fix Access-Control-Allow-Origin issue using JSONP
                     $$.get(basePath + '/users/' + username + '/repos', {'callback': '?'} , cb);
+                },
+                getRepo: function(name, owner, cb) {
+                    if (mockup) {
+                        cb(App.Mockups.github.repo);
+                        return;
+                    }
+                    // TODO fix Access-Control-Allow-Origin issue using JSONP
+                    $$.get(basePath + '/repos/' + owner + '/' + name, {'callback': '?'} , cb);                    
                 }
             }
         }

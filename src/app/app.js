@@ -1,5 +1,5 @@
 var App = (function(lng, undefined) {
-
+    
     //Define your LungoJS Application Instance
     
     lng.App.init({
@@ -9,13 +9,17 @@ var App = (function(lng, undefined) {
             sections: [
                 'user.html',
                 'orgs.html',
-                'repos.html'
+                'org.html',
+                'repos.html',
+                'repo.html'
             ],
             templates: [
                 'activity-item.html',
                 'profile.html',
                 'org-item.html',
-                'repo-item.html'
+                'repo-item.html',
+                'organization.html',
+                'repository.html'
             ]
         }
     });
@@ -109,6 +113,19 @@ var App = (function(lng, undefined) {
                     "url": "https://api.github.com/orgs/mozilla-b2g"
                   }
                 ],
+                org: {
+                    "following": 0,
+                    "created_at": "2011-12-13T20:29:24Z",
+                    "type": "Organization",
+                    "avatar_url": "https://secure.gravatar.com/avatar/5d3298fea79ed4905a6419683f377598?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-org-420.png",
+                    "public_gists": 0,
+                    "html_url": "https://github.com/mozilla-b2g",
+                    "public_repos": 53,
+                    "followers": 6,
+                    "login": "mozilla-b2g",
+                    "id": 1261292,
+                    "url": "https://api.github.com/orgs/mozilla-b2g"
+                },
                 repos: [
                   {
                     "has_downloads": false,
@@ -1227,7 +1244,127 @@ var App = (function(lng, undefined) {
                     "ssh_url": "git@github.com:timdream/wids-demo.git",
                     "url": "https://api.github.com/repos/timdream/wids-demo"
                   }
-                ]
+                ],
+                repo: {
+                    "forks": 11,
+                    "created_at": "2012-05-21T10:59:44Z",
+                    "open_issues": 0,
+                    "owner": {
+                        "avatar_url": "https://secure.gravatar.com/avatar/05c84be2ce3d0a014ac4253156a1eaff?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-org-420.png",
+                        "gravatar_id": "05c84be2ce3d0a014ac4253156a1eaff",
+                        "login": "telefonicaid",
+                        "id": 968363,
+                        "url": "https://api.github.com/users/telefonicaid"
+                    },
+                    "organization": {
+                        "avatar_url": "https://secure.gravatar.com/avatar/05c84be2ce3d0a014ac4253156a1eaff?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-org-420.png",
+                        "gravatar_id": "05c84be2ce3d0a014ac4253156a1eaff",
+                        "login": "telefonicaid",
+                        "id": 968363,
+                        "url": "https://api.github.com/users/telefonicaid"
+                    },
+                    "mirror_url": null,
+                    "parent": {
+                        "forks": 353,
+                        "created_at": "2011-09-03T01:38:46Z",
+                        "open_issues": 293,
+                        "owner": {
+                          "avatar_url": "https://secure.gravatar.com/avatar/5d3298fea79ed4905a6419683f377598?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-org-420.png",
+                          "gravatar_id": "5d3298fea79ed4905a6419683f377598",
+                          "login": "mozilla-b2g",
+                          "id": 1261292,
+                          "url": "https://api.github.com/users/mozilla-b2g"
+                        },
+                        "mirror_url": null,
+                        "language": "JavaScript",
+                        "git_url": "git://github.com/mozilla-b2g/gaia.git",
+                        "watchers": 869,
+                        "svn_url": "https://github.com/mozilla-b2g/gaia",
+                        "ssh_url": "git@github.com:mozilla-b2g/gaia.git",
+                        "forks_count": 353,
+                        "has_downloads": true,
+                        "has_issues": true,
+                        "watchers_count": 869,
+                        "html_url": "https://github.com/mozilla-b2g/gaia",
+                        "updated_at": "2012-10-04T23:27:17Z",
+                        "full_name": "mozilla-b2g/gaia",
+                        "open_issues_count": 293,
+                        "size": 8500,
+                        "fork": false,
+                        "homepage": "https://wiki.mozilla.org/B2G",
+                        "name": "gaia",
+                        "has_wiki": false,
+                        "clone_url": "https://github.com/mozilla-b2g/gaia.git",
+                        "private": false,
+                        "id": 2317369,
+                        "description": "Gaia is a HTML5-based Phone UI for the Boot 2 Gecko Project",
+                        "pushed_at": "2012-10-04T23:16:39Z",
+                        "url": "https://api.github.com/repos/mozilla-b2g/gaia"
+                    },
+                    "language": "JavaScript",
+                    "git_url": "git://github.com/telefonicaid/gaia.git",
+                    "watchers": 15,
+                    "svn_url": "https://github.com/telefonicaid/gaia",
+                    "ssh_url": "git@github.com:telefonicaid/gaia.git",
+                    "forks_count": 11,
+                    "has_downloads": true,
+                    "has_issues": false,
+                    "watchers_count": 15,
+                    "html_url": "https://github.com/telefonicaid/gaia",
+                    "updated_at": "2012-10-04T11:05:48Z",
+                    "full_name": "telefonicaid/gaia",
+                    "source": {
+                        "forks": 353,
+                        "created_at": "2011-09-03T01:38:46Z",
+                        "open_issues": 293,
+                        "owner": {
+                          "avatar_url": "https://secure.gravatar.com/avatar/5d3298fea79ed4905a6419683f377598?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-org-420.png",
+                          "gravatar_id": "5d3298fea79ed4905a6419683f377598",
+                          "login": "mozilla-b2g",
+                          "id": 1261292,
+                          "url": "https://api.github.com/users/mozilla-b2g"
+                        },
+                        "mirror_url": null,
+                        "language": "JavaScript",
+                        "git_url": "git://github.com/mozilla-b2g/gaia.git",
+                        "watchers": 869,
+                        "svn_url": "https://github.com/mozilla-b2g/gaia",
+                        "ssh_url": "git@github.com:mozilla-b2g/gaia.git",
+                        "forks_count": 353,
+                        "has_downloads": true,
+                        "has_issues": true,
+                        "watchers_count": 869,
+                        "html_url": "https://github.com/mozilla-b2g/gaia",
+                        "updated_at": "2012-10-04T23:27:17Z",
+                        "full_name": "mozilla-b2g/gaia",
+                        "open_issues_count": 293,
+                        "size": 8500,
+                        "fork": false,
+                        "homepage": "https://wiki.mozilla.org/B2G",
+                        "name": "gaia",
+                        "has_wiki": false,
+                        "clone_url": "https://github.com/mozilla-b2g/gaia.git",
+                        "private": false,
+                        "id": 2317369,
+                        "description": "Gaia is a HTML5-based Phone UI for the Boot 2 Gecko Project",
+                        "pushed_at": "2012-10-04T23:16:39Z",
+                        "url": "https://api.github.com/repos/mozilla-b2g/gaia"
+                    },
+                    "network_count": 353,
+                    "master_branch": "develop",
+                    "open_issues_count": 0,
+                    "size": 2076,
+                    "fork": true,
+                    "homepage": "https://wiki.mozilla.org/B2G",
+                    "name": "gaia",
+                    "has_wiki": false,
+                    "clone_url": "https://github.com/telefonicaid/gaia.git",
+                    "private": false,
+                    "id": 4392508,
+                    "description": "Gaia is a HTML5-based Phone UI for the Boot 2 Gecko Project",
+                    "pushed_at": "2012-10-04T11:05:48Z",
+                    "url": "https://api.github.com/repos/telefonicaid/gaia"
+                }
             }
         }
     }

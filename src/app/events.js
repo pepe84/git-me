@@ -25,6 +25,13 @@ App.Events = (function(lng, app, undefined) {
         });
     });
     
+    $$('.goto-org').tap(function(e){
+        var name = $$(this).attr('data-name');
+        app.Services.github.Orgs.getOrg(name, function(resp){
+            lng.View.Template.render('#organization', 'organization-tpl', resp);
+        });
+    });
+    
     // TODO Dynamic user param
     $$('#goto-repos').tap(function(e){
         app.Services.github.Repos.getReposByUser(this.innerHTML, function(resp){
@@ -33,6 +40,14 @@ App.Events = (function(lng, app, undefined) {
                 template: 'repo-item-tpl',
                 data: resp
             });
+        });
+    });
+
+    $$('.goto-repo').tap(function(e){
+        var name = $$(this).attr('data-name');
+        var owner = $$(this).attr('data-owner');
+        app.Services.github.Repos.getRepo(name, owner, function(resp){
+            lng.View.Template.render('#repository', 'repository-tpl', resp);
         });
     });
     

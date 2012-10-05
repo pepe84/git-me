@@ -1,0 +1,13 @@
+<ul id="repo-{{id}}" data-template="repository-tpl" class="list">
+    <li>{{name}} ({{language}})<small>{{description}}</small></li>
+    <li>
+        <ul>
+            <li>{{forks}} forks</li>
+            <li>{{watchers}} watchers</li>
+            <li>{{open_issues}} issues</li>
+        </ul>
+    </li>
+    <li>
+        <span class="icon group"></span><a class="goto-org" href="#org" data-name="{{organization.login}}" data-target="section">{{organization.login}}</a>
+    </li>
+</ul>
